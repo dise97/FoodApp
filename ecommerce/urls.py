@@ -28,6 +28,8 @@ urlpatterns = [
     path('', v.register, name="register"),
     path('', include('store.urls')),
     path('', include('django.contrib.auth.urls')),
+    url(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}), 
+    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATICFILES_DIRS}), 
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
