@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -40,6 +44,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'store.apps.StoreConfig',
     'register.apps.RegisterConfig',
+    
 ]
 
 MIDDLEWARE = [
@@ -122,6 +127,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL='/images/'
@@ -134,3 +140,9 @@ CRISPY_TEMPLATE_PACK="bootstrap4"
 
 LOGIN_REDIRECT_URL = "/store"
 LOGOUT_REDIRECT_URL = "/login"
+
+cloudinary.config( 
+  cloud_name = "drncaqr01", 
+  api_key = "573752244388892", 
+  api_secret = "6DToFClXLKotS7lle6U_Amn2rlg" 
+)
