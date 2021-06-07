@@ -12,10 +12,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 
-import cloudinary
-import cloudinary.uploader
-import cloudinary.api
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -140,9 +136,3 @@ CRISPY_TEMPLATE_PACK="bootstrap4"
 
 LOGIN_REDIRECT_URL = "/store"
 LOGOUT_REDIRECT_URL = "/login"
-
-cloudinary.config( 
-  cloud_name = "drncaqr01", 
-  api_key = "573752244388892", 
-  api_secret = "6DToFClXLKotS7lle6U_Amn2rlg" 
-)
